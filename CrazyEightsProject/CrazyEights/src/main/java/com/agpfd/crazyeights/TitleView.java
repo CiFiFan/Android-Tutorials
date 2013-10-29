@@ -10,10 +10,10 @@ import android.view.MotionEvent;
 import android.view.View;
 
 
-
 public class TitleView extends View {
 
     private Bitmap titleGraphic;
+    private Bitmap playButtonUp;
     private int screenW;
     private int screenH;
 
@@ -22,6 +22,9 @@ public class TitleView extends View {
         titleGraphic =
                 BitmapFactory.decodeResource(getResources(),
                         R.drawable.title_graphic);
+        playButtonUp =
+                BitmapFactory.decodeResource(getResources(),
+                        R.drawable.play_button_up);
     }
 
     @Override
@@ -36,6 +39,9 @@ public class TitleView extends View {
     protected  void  onDraw(Canvas canvas) {
         canvas.drawBitmap(titleGraphic,
                 (screenW=titleGraphic.getWidth())/2, 0, null);
+        canvas.drawBitmap(playButtonUp,
+                (int)(screenW*0.5),
+                (int)(screenH*0.7), null);
     }
 
     @Override
